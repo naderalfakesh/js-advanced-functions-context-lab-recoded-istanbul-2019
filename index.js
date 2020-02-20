@@ -75,18 +75,17 @@ function wagesEarnedOnDate(date){
  return hoursWorkedOnDate.call(this,date) * this.payPerHour;
 }
 
-// function allWagesFor(date){
-// return hoursWorkedOnDate.call(this,date) * this.payPerHour;
-// }
-
-function findEmployeeByFirstName(srcArr,firstName){
-  return srcArr.find(elm => elm.firstName === firstName ).firstName 
+function findEmployeebyFirstName(srcArr,firstName){
+const result = srcArr.find(elm => elm.firstName === firstName ) 
+return result.firstName;
 }
 
 function calculatePayroll(srcArr){
   const total = srcArr.reduce((memo,curr)=>{
-    
-  })
+    const date= curr.timeInEvents[0].date
+    return memo += wagesEarnedOnDate.call(curr,date)
+  },0)
+  return total;
 }
 
 
