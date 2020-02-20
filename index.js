@@ -65,10 +65,28 @@ function createTimeOutEvent(str){
   return this;
 }
 
-function hoursWorkedOnDate(str){
- this.timeOutEvents.find(event =>)
+function hoursWorkedOnDate(date){
+ const outryHour = this.timeOutEvents.find(event => event.date === date)
+ const entryHour = this.timeInEvents.find(event => event.date === date)
+ return (outryHour.hour - entryHour.hour)/100
 }
 
-function hoursWorkedOnDate(str){
- 
+function wagesEarnedOnDate(date){
+ return hoursWorkedOnDate.call(this,date) * this.payPerHour;
 }
+
+// function allWagesFor(date){
+// return hoursWorkedOnDate.call(this,date) * this.payPerHour;
+// }
+
+function findEmployeeByFirstName(srcArr,firstName){
+  return srcArr.find(elm => elm.firstName === firstName ).firstName 
+}
+
+function calculatePayroll(srcArr){
+  const total = srcArr.reduce((memo,curr)=>{
+    
+  })
+}
+
+
