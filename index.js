@@ -77,7 +77,7 @@ function wagesEarnedOnDate(date){
 
 function findEmployeebyFirstName(srcArr,firstName){
 const result = srcArr.find(elm => elm.firstName === firstName ) 
-return result.firstName;
+return result;
 }
 
 function calculatePayroll(srcArr){
