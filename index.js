@@ -83,7 +83,7 @@ return result;
 function calculatePayroll(srcArr){
   const total = srcArr.reduce((memo,curr)=>{
     const dates= curr.timeInEvents.map(elem => elem.date)
-    return memo += dates.reduce((tot,val)=>,o)wagesEarnedOnDate.call(curr,date)
+    return memo += dates.reduce((tot,val)=>tot += wagesEarnedOnDate.call(curr,date),o)
   },0)
   return total;
 }
